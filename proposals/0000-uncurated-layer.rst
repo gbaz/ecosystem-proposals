@@ -9,9 +9,9 @@ Uncurated Hackage Layer
 Motivation
 ----------
 
-There is a tension between two purposes of Hackage -- first as a central repository of Haskell code, and second as a curated store that has artifacts that are intended to be correctly built and depended upon in a self-contained fashion. (I.e. which contain all information necessary to correctly build them). The way the latter is accomplished is by asking packages follow the package version policy (https://pvp.haskell.org/) that is used to inform clients of a package of changes to that package that might affect them, and to provide a way for clients to specify a particular range of versions of a dependency that they are compatible with.
+There is a tension between two purposes of Hackage -- first as a central repository of Haskell code, and second as a curated store that has artifacts that are intended to be correctly built and depended upon in a self-contained fashion (i.e. which contain all information necessary to correctly build them). The way the latter is accomplished is by asking packages follow the Package Versioning Policy (https://pvp.haskell.org/) that is used to inform clients of a package of changes to that package that might affect them, and to provide a way for clients to specify a particular range of versions of a dependency that they are compatible with.
 
-The aim of this proposal is to separate these two purposes, by allowing authors to distinguish if they wish to opt-out of following the pvp and the attendant curation process that helps to maintain correct dependency information. In so doing, they recognize that their discoverability on Hackage may be reduced, since the UI will give precedence to those packages which, in conjunction with potential cabal revisions, are self-contained with regards to the information necessary to build them.
+The aim of this proposal is to separate these two purposes, by allowing authors to distinguish if they wish to opt-out of following the PVP and the attendant curation process that helps to maintain correct dependency information. In so doing, they recognize that their discoverability on Hackage may be reduced, since the UI will give precedence to those packages which, in conjunction with potential cabal revisions, are self-contained with regards to the information necessary to build them.
 
 Proposed Change
 ---------------
