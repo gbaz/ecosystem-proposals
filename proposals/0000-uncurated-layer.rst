@@ -22,7 +22,7 @@ The desired end-state will have the following properties:
 
 1) Packages will have an additional flag set in the Hackage package database, that indicates if they are curated or not. This flag is set *per version*.
 2) Package authors will set this flag *on upload*, by setting the "x-curation" property of the cabal file of a package. If no "x-uncurated" property is set, this will be considered "curated". Along with "curated" and "uncurated," other sub-settings will be made available. In particular: "uncurated-no-trustee-contact" and "uncurated-seeking-adoption".
-3) Hackage will provide two package repository roots -- http://hackage.haskell.org and http://uncurated.hackage.haskell.org These roots will provide index-01.tar.gz files that contain the information, respectively, for curated packages, or for all packages. The uncurated root will contain no revision information.
+3) Hackage will provide two package repository roots -- http://hackage.haskell.org and http://uncurated.hackage.haskell.org These roots will provide index-01.tar.gz files that contain the information, respectively, for curated packages, or for all packages. The uncurated root will contain no revision information for uncurated packages (even those that have been adopted), but will contain revision information for curated packages.
 4) Curated packages cannot depend on uncurated packages, and the hackage server will detect this as an error at upload time.
 5) Uncurated packages may be "adopted" into the curated ecosystem by trustees. Metadata revisions necessarily remove the x-uncurated property from the revised cabal metadata.
 
