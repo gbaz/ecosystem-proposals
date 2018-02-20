@@ -21,14 +21,14 @@ This is a phased proposal with gradual rollout possible, in dependency order of 
 The desired end-state will have the following properties:
 
 1) Packages will have an additional flag set in the Hackage package database, that indicates if they are curated or not. This flag is set *per version*.
-2) Package authors will set this flag *on upload*, by setting the "x-curation" property of the cabal file of a package. If no "x-uncurated" property is set, this will be considered "curated". Along with "curated" and "uncurated," other sub-settings will be made available. In particular: "uncurated-no-trustee-contact" and "uncurated-seeking-adoption".
+2) Package authors will set this flag *on upload*, by setting the "x-curation" property of the cabal file of a package. If no "x-curation" property is set, this will be considered "curated". Along with "curated" and "uncurated," other sub-settings will be made available. In particular: "uncurated-no-trustee-contact" and "uncurated-seeking-adoption".
 3) Hackage will provide two package repository roots -- http://hackage.haskell.org and http://uncurated.hackage.haskell.org These roots will provide index-01.tar.gz files that contain the information, respectively, for curated packages, or for all packages. The uncurated root will contain no revision information for uncurated packages (even those that have been adopted), but will contain revision information for curated packages.
 4) Curated packages cannot depend on uncurated packages, and the hackage server will detect this as an error at upload time.
-5) Uncurated packages may be "adopted" into the curated ecosystem by trustees. Metadata revisions necessarily remove the x-uncurated property from the revised cabal metadata.
+5) Uncurated packages may be "adopted" into the curated ecosystem by trustees. Metadata revisions necessarily remove the x-curation property from the revised cabal metadata.
 
 The first phase of this rollout is simply social. It has the following properties:
 
-+ Hackage trustees will recognize and respect the uncurated flag. When it is set to "uncurated-no-trustee-contact" they will not contact authors with any issues. They *will* retain the ability to make metadata revisions, bearing in mind that they must remove the x-uncurated property from revised metadata.
++ Hackage trustees will recognize and respect the uncurated flag. When it is set to "uncurated-no-trustee-contact" they will not contact authors with any issues. They *will* retain the ability to make metadata revisions, bearing in mind that they must remove the x-curation property from revised metadata.
 
 The second phase is a technical change as soon as possible to enforce the semantics of x-curation:
 
